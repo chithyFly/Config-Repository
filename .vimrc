@@ -10,6 +10,7 @@ set smartindent
 set hidden
 set hlsearch
 nnoremap <esc> :noh<return><esc>
+set incsearch
 set mouse=a
 
 
