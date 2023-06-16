@@ -4,16 +4,16 @@
         {
             "label": "build",
             "type": "shell",
-            "command": "g++", //写c++换成g++
+            "command": "g++", 
             "args": [
-                "${fileDirname}/*.cpp", //写c++把 *.c 换成 *.cpp
+                "${fileDirname}/*.cpp", 
                 "-o",
                 "${fileDirname}/${fileBasenameNoExtension}.exe",
                 "-g",
                 "-Wall", 
                 "-static-libgcc",   
                 "-fexec-charset=UTF-8",
-                "-std=c++11",  //写c++换成c++标准
+                "-std=c++11",  
             ],
             "group": {
                 "kind": "build",

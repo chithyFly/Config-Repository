@@ -2,18 +2,18 @@
     "version": "2.0.0",
     "tasks": [
         {
-            "label": "build",
+            "label": "compile multiplied c files",
             "type": "shell",
-            "command": "gcc", //写c++换成g++
+            "command": "gcc",
             "args": [
-                "${fileDirname}\\*.c", //写c++把 *.c 换成 *.cpp
+                "${fileDirname}/*.c", 
                 "-o",
-                "${fileDirname}\\${fileBasenameNoExtension}.exe",
+                "${fileDirname}/${fileBasenameNoExtension}.exe",
                 "-g",
                 "-Wall", 
                 "-static-libgcc",   
                 "-fexec-charset=UTF-8",
-                "-std=c11",  //写c++换成c++标准
+                "-std=c11", 
             ],
             "group": {
                 "kind": "build",
@@ -23,7 +23,7 @@
                 "echo": true,
                 "reveal": "always",
                 "focus": false,
-                "panel": "new"
+                "panel": "shared"
             },
             "problemMatcher": "$gcc"
         },
@@ -31,7 +31,7 @@
             "label": "run",
             "type": "shell",
             "dependsOn": "build",
-            "command": "${fileDirname}\\${fileBasenameNoExtension}.exe",
+            "command": "${fileDirname}/${fileBasenameNoExtension}.exe",
             "group": {
                 "kind": "test",
                 "isDefault": true
