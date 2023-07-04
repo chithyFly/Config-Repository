@@ -13,7 +13,7 @@
                 "-Wall", 
                 "-static-libgcc",   
                 "-fexec-charset=UTF-8",
-                "-std=c++11",  
+                "-std=c++11"
             ],
             "group": {
                 "kind": "build",
@@ -26,23 +26,6 @@
                 "panel": "shared"
             },
             "problemMatcher": "$gcc"
-        },
-        {
-            "label": "run",
-            "type": "shell",
-            "dependsOn": "build",
-            "command": "${fileDirname}/${fileBasenameNoExtension}.exe",
-            "group": {
-                "kind": "test",
-                "isDefault": true
-            },
-            "presentation": {
-                "echo": true,
-                "reveal": "always",
-                "focus": true,
-                "panel": "shared"
-            }
         }
-
     ]
 }
