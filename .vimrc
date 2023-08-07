@@ -1,6 +1,7 @@
 set relativenumber
 set number
 
+set expandtab
 set tabstop=4
 set softtabstop=4
 set shiftwidth=4
@@ -8,6 +9,9 @@ set shiftwidth=4
 
 set smartindent
 set hidden
+
+"Command line auto-completion with bash shell habits
+set wildmode=longest,list
 
 " Highlight the matching texts when searching
 set hlsearch
