@@ -10,6 +10,9 @@ set shiftwidth=4
 set smartindent
 set hidden
 
+"Expand the command history record to 200(default 20)
+set history=200
+
 "Command line auto-completion with bash shell habits
 set wildmode=longest,list
 
