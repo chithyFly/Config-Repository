@@ -29,3 +29,7 @@ inoremap { {<CR>}<ESC>kA
 " Press <esc> to cancel the search highlighting
 nnoremap <esc> :noh<return><esc>
 
+" Map %% -> %:h<Tab>, Explain: type %% expand automatically path for active buffer in command line mode
+" Note -> ':h' delete the file name 
+"         '%'  expand the path relative to the current working dictory
+cnoremap <expr> %% getcmdtype( ) == ':' ? expand('%:h').'/' : '%%'
