@@ -26,8 +26,9 @@ set wildmode=longest,list
 " Autocomplete {}
 inoremap { {<CR>}<ESC>kA
 
-" Press <esc> to cancel the search highlighting
-nnoremap <esc> :noh<return><esc>
+" <C-l> used to be cleaing and redrawing display screen
+" The new mapping <C-l> increase temporary diable hightlight search functionality
+nnoremap<silent> <C-l> :<C-u>nohlsearch<CR><C-l>
 
 " Map %% -> %:h<Tab>, Explain: type %% expand automatically path for active buffer in command line mode
 " Note -> ':h' delete the file name 

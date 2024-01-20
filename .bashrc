@@ -116,18 +116,14 @@ if ! shopt -oq posix; then
   fi
 fi
 
-# thefuck project config for simplying command, 'fuck'
-eval $(thefuck --alias)
-# You can use whatever you want as an alias, like for Mondays:
-eval $(thefuck --alias FUCK)
-
 # Changing cursor blink rate for 500 millis in linux console
 echo -e '\e[16;500]'
 
-# Proxy setting to two command `setss` and `unsetss` for wsl on windows
+# Proxy setting to two command `setss` and `unsetss` for WSL2 on windows
 export hostip=$(cat /etc/resolv.conf |grep -oP '(?<=nameserver\ ).*')
 alias setss='export https_proxy="http://${hostip}:7890";export http_proxy="http://${hostip}:7890";'
 alias unsetss='unset all_proxy'
 
-# Set vi mode on bash
-set -o vi
+# Enable default editor=vim
+export EDITOR=vim
+
