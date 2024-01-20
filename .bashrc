@@ -116,10 +116,11 @@ if ! shopt -oq posix; then
   fi
 fi
 
-# Changing cursor blink rate for 500 millis in linux console
-echo -e '\e[16;500]'
+# ignore comamnd into .bash_history with space start
+HISTCONTROL=ignorespace
 
+# Enable default editor with vim
 export EDITOR=vim
 
-# ignorecommand into .bash_history with space prefix
-HISTCONTROL=ignorespace
+# Changing cursor blink rate for 500 millis in linux console
+echo -e '\e[16:500]'
