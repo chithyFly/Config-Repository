@@ -124,3 +124,6 @@ export EDITOR=vim
 
 # Changing cursor blink rate for 500 millis in linux console
 echo -e '\e[16:500]'
+
+# Show only current and parent directory in bash prompt
+export PROMPT_DIRTRIM=2
