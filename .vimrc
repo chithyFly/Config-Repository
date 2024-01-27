@@ -38,7 +38,13 @@ inoremap { {<CR>}<ESC>kA
 " The new mapping <C-l> increase temporary diable hightlight search functionality
 nnoremap<silent> <C-l> :<C-u>nohlsearch<CR><C-l>
 
+
+" Visual mode search select text(vim built-in, `:h visual-search` to help
+" Note: . and * character sometimes cause problem
+:vmap X y/<C-R>"<CR>
+
 " Map %% -> %:h<Tab>, Explain: type %% expand automatically path for active buffer in command line mode
+
 " Note:':h' delete the file name 
 "      '%'  expand the path relative to the current working dictory
 cnoremap <expr> %% getcmdtype( ) == ':' ? expand('%:h').'/' : '%%'
