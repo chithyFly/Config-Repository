@@ -1,6 +1,9 @@
 set relativenumber
 set number
 
+" Let netrw will save no history or bookmarks:
+:let g:netrw_dirhistmax = 0
+
 syntax on
 
 set expandtab
@@ -44,7 +47,11 @@ nnoremap<silent> <C-l> :<C-u>nohlsearch<CR><C-l>
 :vmap X y/<C-R>"<CR>
 
 " Map %% -> %:h<Tab>, Explain: type %% expand automatically path for active buffer in command line mode
-
 " Note:':h' delete the file name 
 "      '%'  expand the path relative to the current working dictory
 cnoremap <expr> %% getcmdtype( ) == ':' ? expand('%:h').'/' : '%%'
+
+" Vim plug config
+call plug#begin()
+
+call plug#end()
