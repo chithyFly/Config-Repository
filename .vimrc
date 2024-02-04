@@ -52,6 +52,12 @@ nnoremap<silent> <C-l> :<C-u>nohlsearch<CR><C-l>
 cnoremap <expr> %% getcmdtype( ) == ':' ? expand('%:h').'/' : '%%'
 
 " Vim plug config
+let data_dir = has('nvim') ? stdpath('data') . '/site' : '~/.vim'
+if empty(glob(data_dir . '/autoload/plug.vim'))
+  silent execute '!curl -fLo '.data_dir.'/autoload/plug.vim --create-dirs  https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'
+  autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
+endif
 call plug#begin()
-
+Plug 'https://github.com/tpope/vim-surround'
+Plug 'https://github.com/scrooloose/nerdtree'
 call plug#end()
