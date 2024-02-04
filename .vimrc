@@ -11,9 +11,6 @@ set tabstop=4
 set softtabstop=4
 set shiftwidth=4
 
-" Always show the status line at the bottom, even if you only have one window open.
-set laststatus=2
-
 set smartindent
 
 set hidden
@@ -60,4 +57,5 @@ endif
 call plug#begin()
 Plug 'https://github.com/tpope/vim-surround'
 Plug 'https://github.com/scrooloose/nerdtree'
+Plug 'https://github.com/tpope/vim-repeat'
 call plug#end()
