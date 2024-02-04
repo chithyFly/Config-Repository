@@ -1,7 +1,19 @@
 #!/usr/bin/env bash
 
+# Set the source and destination directories
+dotfiles_dir="$HOME/dotfiles"
+destination_dir="$HOME"
+
 # Suppose current dirctory is dotfiles repo root
-ln -sf "./.vim" "$HOME/.vim"
-ln -sf "./.vimrc" "$HOME/.vimrc"
-ln -sf "./.tmux.config" "$HOME/.tmux.config"
-ln -sf "./.bashrc" "$HOME/.bashrc"
+if [[ ! -d "$dotfiles_dir" ]]; then
+	echo "Dotfiles directory not found: $dotfiles_dir"
+	exit 1
+fi
+
+cd "$dotfiles_dir" || exit 2
+
+for file in .bashrc .tmux.config .vim .vimrc; do
+    ln -sf "$dotfiles_dir/$file" "$destination_dir/$file"
+done
+
+echo "Dotfiles setup completed!"

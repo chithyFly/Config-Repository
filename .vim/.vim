@@ -1,0 +1,1 @@
+/home/chithy/dotfiles/.vim
