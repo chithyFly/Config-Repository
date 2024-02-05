@@ -4,6 +4,9 @@ set number
 " Let netrw will save no history or bookmarks:
 :let g:netrw_dirhistmax = 0
 
+" Enable fzf for vim
+source /usr/share/doc/fzf/examples/fzf.vim
+
 syntax on
 
 set expandtab
@@ -38,6 +41,8 @@ inoremap { {<CR>}<ESC>kA
 " The new mapping <C-l> increase temporary diable hightlight search functionality
 nnoremap<silent> <C-l> :<C-u>nohlsearch<CR><C-l>
 
+" <ctrl-b> open NERDTreeToggle
+nnoremap <C-b> :NERDTreeToggle<CR>
 
 " Visual mode search select text(vim built-in, `:h visual-search` to help
 " Note: . and * character sometimes cause problem
@@ -58,4 +63,5 @@ call plug#begin()
 Plug 'https://github.com/tpope/vim-surround'
 Plug 'https://github.com/scrooloose/nerdtree'
 Plug 'https://github.com/tpope/vim-repeat'
+Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 call plug#end()

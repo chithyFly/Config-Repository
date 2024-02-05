@@ -127,3 +127,9 @@ echo -e '\e[16:500]'
 
 # Show only current and parent directory in bash prompt
 export PROMPT_DIRTRIM=2
+
+[ -f ~/.fzf.bash ] && source ~/.fzf.bash
+# Enable fzf keybindings for Bash
+source /usr/share/doc/fzf/examples/key-bindings.bash
+# Enable fuzzy auto-completion for Bash:
+source /usr/share/doc/fzf/examples/completion.bash
