@@ -4,9 +4,6 @@ set number
 " Let netrw will save no history or bookmarks:
 :let g:netrw_dirhistmax = 0
 
-" Enable fzf for vim
-source /usr/share/doc/fzf/examples/fzf.vim
-
 syntax on
 
 set expandtab
