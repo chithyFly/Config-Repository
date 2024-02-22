@@ -133,3 +133,4 @@ export PROMPT_DIRTRIM=2
 source /usr/share/doc/fzf/examples/key-bindings.bash
 # Enable fuzzy auto-completion for Bash:
 source /usr/share/doc/fzf/examples/completion.bash
+function ranger () { command ranger "$@"; echo -e "\e[?25h"; }

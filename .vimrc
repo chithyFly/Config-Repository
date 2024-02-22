@@ -1,7 +1,7 @@
 set relativenumber
 set number
 
-" Let netrw will save no history or bookmarks:
+" Let netrw don't save history or bookmarks:
 :let g:netrw_dirhistmax = 0
 
 syntax on
@@ -47,7 +47,9 @@ nnoremap<silent> <C-l> :<C-u>nohlsearch<CR><C-l>
 "      '%'  expand the path relative to the current working dictory
 cnoremap <expr> %% getcmdtype( ) == ':' ? expand('%:h').'/' : '%%'
 
-" Vim plug config
+set nocompatible
+filetype plugin on
+" Install vimplugin if not install
 let data_dir = has('nvim') ? stdpath('data') . '/site' : '~/.vim'
 if empty(glob(data_dir . '/autoload/plug.vim'))
   silent execute '!curl -fLo '.data_dir.'/autoload/plug.vim --create-dirs  https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'
