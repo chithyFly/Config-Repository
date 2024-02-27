@@ -31,9 +31,6 @@ set history=200
 " Command line auto-completion with bash shell habits
 set wildmode=longest,list
 
-" Autocomplete {}
-inoremap { {<CR>}<ESC>kA
-
 " <C-l> used to be cleaing and redrawing display screen
 " The new mapping <C-l> increase temporary diable hightlight search functionality
 nnoremap<silent> <C-l> :<C-u>nohlsearch<CR><C-l>
