@@ -15,6 +15,8 @@ set smartindent
 
 set hidden
 
+set nowrap
+
 " Enable search as typing, instead of after press 'enter'
 set incsearch
 " Enable hightlight match search content
