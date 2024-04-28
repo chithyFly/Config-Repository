@@ -48,13 +48,6 @@ cnoremap <expr> %% getcmdtype( ) == ':' ? expand('%:h').'/' : '%%'
 
 set nocompatible
 filetype plugin on
-" Install vimplugin if not install
-let data_dir = has('nvim') ? stdpath('data') . '/site' : '~/.vim'
-if empty(glob(data_dir . '/autoload/plug.vim'))
-  silent execute '!curl -fLo '.data_dir.'/autoload/plug.vim --create-dirs  https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'
-  autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
-endif
-call plug#begin()
-Plug 'https://github.com/tpope/vim-surround'
-Plug 'https://github.com/tpope/vim-repeat'
-call plug#end()
+autocmd Filetype java set makeprg=javac\ %
+set errorformat=%A%f:%l:\ %m,%-Z%p^,%-C%.%#
+map <F10> :make<Return>:copen<Return>
