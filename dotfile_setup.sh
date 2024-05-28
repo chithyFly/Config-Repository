@@ -4,15 +4,15 @@
 shopt -s extglob
 
 # Set the source and destination directories
-dotfiles_dir="$HOME/dotfiles"
+dotfile_dir="$HOME/dotfiles"
 destination_dir="$HOME"
 
-if [[ ! -d "$dotfiles_dir" ]]; then
-	echo "Dotfiles directory not found: $dotfiles_dir"
+if [[ ! -d "$dotfile_dir" ]]; then
+	echo "Dotfiles directory not found: $dotfile_dir"
 	exit 1
 fi
 
-cd "$dotfiles_dir" || exit 2
+cd "$dotfile_dir" || exit 2
 
 # Declare a hash map for config files (in genreal like hash set)
 declare -A configFiles
@@ -24,10 +24,10 @@ configFiles[".tmux.conf"]=1
 # Only iterate all hidden files(exclusive . and ..)
 for f in .*; do
     if [[ -e "$f" ]] && [[ "${configFiles[${f}]}" ]]; then
-        ln -sf "$dotfiles_dir/$f" "$destination_dir/$f"
+        ln -sf "$dotfile_dir/$f" "$destination_dir/$f"
     fi
 done
 
-echo "Dotfiles setup completed!"
+echo "Dotfile setup completed!"
 
 
