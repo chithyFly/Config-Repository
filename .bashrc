@@ -116,7 +116,8 @@ if ! shopt -oq posix; then
   fi
 fi
 
-# ignore comamnd into .bash_history with space start
+
+# Ignore comamnd into .bash_history with space start
 HISTCONTROL=ignorespace
 
 # Enable default editor with vim
@@ -135,3 +136,7 @@ source /usr/share/doc/fzf/examples/completion.bash
 
 # Solve cursor disappear problem when open file using ranger on wsl2
 function ranger () { command ranger "$@"; echo -e "\e[?25h"; }
+
+# Alias section
+alias `git log`=`git log --all --decorate --graph`
+

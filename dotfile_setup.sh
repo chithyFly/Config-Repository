@@ -8,7 +8,7 @@ dotfile_dir="$HOME/dotfiles"
 destination_dir="$HOME"
 
 if [[ ! -d "$dotfile_dir" ]]; then
-	echo "Dotfiles directory not found: $dotfile_dir"
+	echo "dotfiles directory not found: $dotfile_dir"
 	exit 1
 fi
 
@@ -28,6 +28,4 @@ for f in .*; do
     fi
 done
 
-echo "Dotfile setup completed!"
-
-
+echo "dotfiles setup completed!"
