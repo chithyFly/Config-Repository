@@ -15,15 +15,17 @@ fi
 cd "$dotfile_dir" || exit 2
 
 # Declare a hash map for config files (in genreal like hash set)
-declare -A configFiles
-configFiles[".vim"]=1
-configFiles[".vimrc"]=1
-configFiles[".bashrc"]=1
-configFiles[".tmux.conf"]=1
+# eg. key:true
+declare -A donfig_file_set
+donfig_file_set[".vim"]=1
+donfig_file_set[".vimrc"]=1
+donfig_file_set[".bashrc"]=1
+donfig_file_set[".tmux.conf"]=1
 
 # Only iterate all hidden files(exclusive . and ..)
 for f in .*; do
-    if [[ -e "$f" ]] && [[ "${configFiles[${f}]}" ]]; then
+    # Only enforce soft link for files in set
+    if [[ -e "$f" ]] && [[ "$donfig_file_set[$f]" ]]; then
         ln -sf "$dotfile_dir/$f" "$destination_dir/$f"
     fi
 done

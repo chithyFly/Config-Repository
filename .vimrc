@@ -1,6 +1,8 @@
 set relativenumber
 set number
 
+set nocompatible
+
 " Let netrw don't save history or bookmarks:
 :let g:netrw_dirhistmax = 0
 
@@ -46,8 +48,3 @@ nnoremap<silent> <C-l> :<C-u>nohlsearch<CR><C-l>
 "      '%'  expand the path relative to the current working dictory
 cnoremap <expr> %% getcmdtype( ) == ':' ? expand('%:h').'/' : '%%'
 
-set nocompatible
-filetype plugin on
-autocmd Filetype java set makeprg=javac\ %
-set errorformat=%A%f:%l:\ %m,%-Z%p^,%-C%.%#
-map <F10> :make<Return>:copen<Return>
