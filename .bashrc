@@ -145,4 +145,5 @@ source ~/dotfiles/.config/fzf/key-bindings.bash
 function ranger () { command ranger "$@"; echo -e "\e[?25h"; }
 
 # Alias section
-alias `git log`=`git log --all --decorate --graph`
+alias gl='git log --all --decorate --graph --oneline'
+alias gs='git status'
