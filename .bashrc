@@ -136,12 +136,11 @@ ex ()
   fi
 }
 
-# Enable fzf keybindings for Bash
-source ~/dotfiles/.config/fzf/completion.bash
-# Enable fuzzy auto-completion for Bash:
+# If wrong, get your fzf version config file(Please google your fzf version doc file path on yourself OS)
 source ~/dotfiles/.config/fzf/key-bindings.bash
+source ~/dotfiles/.config/fzf/completion.bash
 
-# Solve cursor disappear problem when open file using ranger on wsl2
+# Solve cursor disappear problem after opening file using ranger on wsl2
 function ranger () { command ranger "$@"; echo -e "\e[?25h"; }
 
 # Alias section
