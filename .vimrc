@@ -29,3 +29,6 @@ set history=200
 
 " Command line auto-completion with bash shell habits
 set wildmode=longest,list
+
+" This will look in the current directory for "tags", and work up the tree towards root until one is found.
+set tags=./tags;/

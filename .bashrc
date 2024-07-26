@@ -136,6 +136,10 @@ ex ()
   fi
 }
 
+# Alias section
+alias gl='git log --all --decorate --graph --oneline'
+alias gs='git status'
+
 # If wrong, get your fzf version config file(Please google your fzf version doc file path on yourself OS)
 source ~/dotfiles/.config/fzf/key-bindings.bash
 source ~/dotfiles/.config/fzf/completion.bash
@@ -143,6 +147,5 @@ source ~/dotfiles/.config/fzf/completion.bash
 # Solve cursor disappear problem after opening file using ranger on wsl2
 function ranger () { command ranger "$@"; echo -e "\e[?25h"; }
 
-# Alias section
-alias gl='git log --all --decorate --graph --oneline'
-alias gs='git status'
+# Config autojump
+. /usr/share/autojump/autojump.sh
