@@ -17,11 +17,7 @@ cd "$dotfile_dir" || exit 2
 # Declare a hash map for config files (in genreal like hash set)
 # eg. key:true
 declare -A config_files
-config_files[".vim"]=1
-config_files[".vimrc"]=1
-config_files[".bashrc"]=1
 config_files[".tmux.conf"]=1
-config_files[".vim"]=1
 
 # Only iterate all hidden files(exclusive . and ..)
 for f in .*; do
